@@ -7,3 +7,12 @@ class Account:
         self.owner = owner
         self.balance = balance
         self.limit = limit
+
+    def statement(self):
+        print(f"The Balance is {self.balance} of the owner {self.owner}.")
+
+    def deposit(self, value):
+        self.balance += value
+
+    def withdraw(self, value):
+        self.balance -= value
