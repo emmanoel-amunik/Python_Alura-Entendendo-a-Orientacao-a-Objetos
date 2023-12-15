@@ -20,3 +20,19 @@ class Account:
     def transfer(self, value, destination):
         self.withdraw(value)
         destination.deposit(value)
+
+    # gets
+    def get_balance(self):
+        return self.__balance
+
+    def get_owner(self):
+        return self.__owner
+
+    @property
+    def limit(self):
+        return self.__limit
+
+    # sets
+    @limit.setter
+    def limit(self, new_limit):
+        self.__limit = new_limit
