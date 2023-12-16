@@ -14,8 +14,16 @@ class Account:
     def deposit(self, value):
         self.__balance += value
 
+    # private method
+    def __can_withdraw(self):
+        pass
+
     def withdraw(self, value):
-        self.__balance -= value
+
+        if value <= (self.__balance + self.__limit):
+            self.__balance -= value
+        else:
+            print(f"The value {value} exceeded the limit")
 
     def transfer(self, value, destination):
         self.withdraw(value)
@@ -36,3 +44,7 @@ class Account:
     @limit.setter
     def limit(self, new_limit):
         self.__limit = new_limit
+
+    @staticmethod
+    def bank_code():
+        return "001"
